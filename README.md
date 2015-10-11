@@ -1,4 +1,6 @@
-# docker-php
+# Docker PHP
+
+Based on [PHP docker image](https://hub.docker.com/_/php/).
 
 ## Apache modules
 
