@@ -17,4 +17,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install gd
 
+RUN apt-get update && apt-get install -y git
+RUN cd /tmp && git clone git://github.com/xdebug/xdebug.git && cd /tmp/xdebug && ./rebuild.sh && make install
+RUN docker-php-ext-enable xdebug
+
 CMD ["apache2-foreground"]
